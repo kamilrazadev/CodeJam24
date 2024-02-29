@@ -1,10 +1,15 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { toast } from "react-toastify";
 import BlueCircle from "../Components/BlueCircle";
+import PurpleCircle from "../Components/PurpleCircle";
 
 const OtpPage = () => {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const refs = [useRef(null), useRef(null), useRef(null), useRef(null)];
+
+  useEffect(() => {
+    refs[0].current.focus();
+  }, []);
 
   const handleChange = (index, value) => {
     if (!isNaN(value) && value.length === 1) {
@@ -32,7 +37,8 @@ const OtpPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (otp.length !== 3) {
+
+    if (otp.length !== 4) {
       return toast.error("Please enter a valid OTP");
     }
     handleVerifyOtp(otp.join(""));
@@ -42,11 +48,16 @@ const OtpPage = () => {
     <main className="w-full min-h-screen flex justify-center items-center bg-[url(/images/png/bg-common.png)] bg-center  bg-fixed bg-cover bg-no-repeat">
       <div className="relative w-fit h-fit">
         <BlueCircle />
+        <PurpleCircle />
         <form
           onSubmit={handleSubmit}
-          className="relative glassy rounded-[16px] h-[400px] w-fit "
+          className="relative glassy rounded-[16px] p-10 w-fit h-[400px] flex flex-col justify-between"
         >
-          <div className="flex flex-col rounded-[16px] p-10 relative z-20">
+          <h1 className="theme-text text-center text-[30px] font-bold">
+            OTP Verification
+          </h1>
+
+          <div className="flex gap-5 rounded-[16px] relative z-20">
             {otp.map((digit, index) => (
               <input
                 id={index}
@@ -56,17 +67,27 @@ const OtpPage = () => {
                 maxLength={1}
                 value={digit}
                 inputMode="numeric"
-                className="bg-transparent"
+                className="bg-transparent border-b-sm border-r-sm border-[#ffffff8a] rounded-lg shadow-custom-inset text-[20px] font-bold theme-text w-[50px] h-[50px] outline-none text-center"
                 onChange={(e) => handleChange(index, e.target.value)}
               />
             ))}
           </div>
-          <button type="submit" className="theme-text">
-            Verify
-          </button>
-          <button type="button" className="theme-text" onClick={handleClear}>
-            Clear
-          </button>
+
+          <div className="w-full flex justify-between">
+            <button
+              type="submit"
+              className="theme-btn font-bold px-5 py-2 rounded-lg transition-all duration-300"
+            >
+              Verify
+            </button>
+            <button
+              type="button"
+              onClick={handleClear}
+              className="theme-btn font-bold px-5 py-2 rounded-lg transition-all duration-300"
+            >
+              Clear
+            </button>
+          </div>
         </form>
       </div>
     </main>

@@ -25,7 +25,11 @@ const App = () => {
   }, []);
 
   return (
-    <main className={`min-h-screen w-full ${isDarkTheme ? "dark" : "light"}`}>
+    <main
+      className={`min-h-screen w-full overflow-x-hidden ${
+        isDarkTheme ? "dark" : "light"
+      }`}
+    >
       <div className="py-4 fixed z-50 top-0 right-5">
         <ThemeToggler
           isDarkTheme={isDarkTheme}
