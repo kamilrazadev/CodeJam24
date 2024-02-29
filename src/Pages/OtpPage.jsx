@@ -52,6 +52,7 @@ const OtpPage = () => {
               type="number"
               maxLength={1}
               value={digit}
+              inputMode="numeric"
               className="bg-transparent"
               onChange={(e) => handleChange(index, e.target.value)}
             />
