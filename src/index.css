@@ -114,3 +114,14 @@ input[type="number"]::-webkit-outer-spin-button {
   border-bottom: 1px solid rgba(224, 224, 224, 0.7);
   border-left: 1px solid rgba(224, 224, 224, 0.7);
 }
+
+.input {
+  padding: 0.4rem 0.3rem 0.4rem 0.8rem;
+    border-radius: 10px;
+    background: inherit;
+    border: 2px solid white;
+    font-size: 0.9rem;
+}
+.input:focus {
+  outline: none;
+}
