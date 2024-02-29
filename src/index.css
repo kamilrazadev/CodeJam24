@@ -25,6 +25,10 @@ input[type="number"]::-webkit-outer-spin-button {
   color: #9c9c9c;
 }
 
+.text-shadow {
+  text-shadow: 2px 2px 3px#000000bb;
+}
+
 .dark {
   background-color: #181818;
   transition: all 300ms;

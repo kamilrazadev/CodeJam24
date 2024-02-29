@@ -8,8 +8,11 @@ export default {
         "custom-inset": "inset -5px 5px 10px 0px #31313138",
       },
       borderWidth: {
-        sm: "0.5px"
-      }
+        sm: "0.5px",
+      },
+      screens: {
+        "screen-620": "620px",
+      },
     },
   },
   plugins: [],
