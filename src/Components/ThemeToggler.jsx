@@ -13,6 +13,7 @@ const ThemeToggler = ({ isDarkTheme, setIsDarkTheme }) => {
   return (
     <label className="theme-switch">
       <input
+        id="theme-switch"
         type="checkbox"
         className="theme-switch__checkbox"
         checked={isDarkTheme}

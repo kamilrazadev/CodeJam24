@@ -47,3 +47,18 @@
     rgb(231, 18, 107) 60%
   );
 }
+
+.dark .glassy {
+  background-color: rgba(225, 225, 225, 0.06);
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 22px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgb(99, 99, 99, 0.7);
+  border-left: 1px solid rgb(99, 99, 99, 0.7);
+}
+.light .glassy {
+  background-color: rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+  box-shadow: 5px 5px 22px rgba(134, 134, 134, 0.2);
+  border-top: 1px solid rgba(224, 224, 224, 0.7);
+  border-left: 1px solid rgba(224, 224, 224, 0.7);
+}
