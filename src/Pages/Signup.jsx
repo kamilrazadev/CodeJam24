@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 const Signup = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
   });
@@ -46,17 +48,48 @@ const Signup = () => {
           <h1 className="theme-text text-center text-[30px] font-bold">
             Signup to Account
           </h1>
-          <div className=" md:h-[12rem] flex flex-col justify-evenly">
+          <div className=" md:h-[12rem] flex md:flex-row flex-col justify-evenly md:gap-7 gap-2">
             <div className="flex flex-col gap-[5px] rounded-[16px] relative z-20">
-              <label className="theme-text" htmlFor="email">
+              <label className="theme-text" htmlFor="name">
+                {" "}
+                First Name :
+              </label>
+              <input
+                name="firstname"
+                id="firstname"
+                type="text"
+                placeholder="First Name"
+                className="input theme-text"
+                onChange={handleInputChange}
+                autoComplete="true"
+              />
+            </div>
+            <div className="flex flex-col gap-[5px] rounded-[16px] relative z-20">
+              <label className="theme-text" htmlFor="password">
+                {" "}
+                Last Name :
+              </label>
+              <input
+                name="lastname"
+                id="lastname"
+                type="text"
+                placeholder="Last Name"
+                className="input theme-text"
+                onChange={handleInputChange}
+              />
+            </div>
+          </div>
+          <div className=" md:h-[12rem] flex md:flex-row flex-col justify-evenly md:gap-7 gap-2">
+            <div className="flex flex-col gap-[5px] rounded-[16px] relative z-20">
+              <label className="theme-text" htmlFor="name">
                 {" "}
                 Email :
               </label>
               <input
                 name="email"
                 id="email"
-                type="text"
-                placeholder="Enter email"
+                type="email"
+                placeholder="Enter your email"
                 className="input theme-text"
                 onChange={handleInputChange}
                 autoComplete="true"
@@ -71,21 +104,7 @@ const Signup = () => {
                 name="password"
                 id="password"
                 type="password"
-                placeholder="Enter Password"
-                className="input theme-text"
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className="flex flex-col gap-[5px] rounded-[16px] relative z-20">
-              <label className="theme-text" htmlFor="password">
-                {" "}
-                Confirm Password :
-              </label>
-              <input
-                name="password"
-                id="password"
-                type="password"
-                placeholder="Enter Password"
+                placeholder="Enter your password"
                 className="input theme-text"
                 onChange={handleInputChange}
               />
@@ -101,9 +120,6 @@ const Signup = () => {
             >
               Sign Up
             </button>
-            <Link className="theme-text text-[0.9rem] transition-all duration-300">
-              Forgot Password ?
-            </Link>
           </div>
           <div className=" text-[0.8rem] h-[2rem] flex items-end theme-text ">
            Already have an account?{" "}
