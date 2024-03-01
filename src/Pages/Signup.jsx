@@ -8,6 +8,8 @@ const Signup = () => {
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
   });
@@ -48,7 +50,38 @@ const Signup = () => {
           <h1 className="theme-text text-center text-[30px] font-bold">
             Signup to Account
           </h1>
-          <div className=" md:h-[12rem] flex md:flex-row flex-col justify-evenly md:gap-7 gap-2">
+          <div className=" md:h-[7rem] flex md:flex-row flex-col justify-evenly md:gap-7 gap-2">
+            <div className="flex flex-col gap-[5px] rounded-[16px] relative z-20">
+              <label className="theme-text" htmlFor="name">
+                {" "}
+                First Name :
+              </label>
+              <input
+                name="firstname"
+                id="firstname"
+                type="text"
+                placeholder="First Name"
+                className="input theme-text"
+                onChange={handleInputChange}
+                autoComplete="true"
+              />
+            </div>
+            <div className="flex flex-col gap-[5px] rounded-[16px] relative z-20">
+              <label className="theme-text" htmlFor="password">
+                {" "}
+                Last Name :
+              </label>
+              <input
+                name="lastname"
+                id="lastname"
+                type="text"
+                placeholder="Last Name"
+                className="input theme-text"
+                onChange={handleInputChange}
+              />
+            </div>
+          </div>
+          <div className=" md:h-[8rem] flex md:flex-row md:flex-row flex-col justify-evenly md:gap-7 gap-2 md:gap-7 gap-2">
             <div className="flex flex-col gap-[5px] rounded-[16px] relative z-20">
               <label className="theme-text" htmlFor="name">
                 {" "}
@@ -82,12 +115,15 @@ const Signup = () => {
           <div className=" md:h-[12rem] flex md:flex-row flex-col justify-evenly md:gap-7 gap-2">
             <div className="flex flex-col gap-[5px] rounded-[16px] relative z-20">
               <label className="theme-text" htmlFor="name">
+              <label className="theme-text" htmlFor="name">
                 {" "}
                 Email :
               </label>
               <input
                 name="email"
                 id="email"
+                type="email"
+                placeholder="Enter your email"
                 type="email"
                 placeholder="Enter your email"
                 className="input theme-text"
@@ -104,6 +140,7 @@ const Signup = () => {
                 name="password"
                 id="password"
                 type="password"
+                placeholder="Enter your password"
                 placeholder="Enter your password"
                 className="input theme-text"
                 onChange={handleInputChange}
