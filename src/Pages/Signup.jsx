@@ -4,7 +4,7 @@ import PurpleCircle from "../Components/PurpleCircle";
 import { Link } from "react-router-dom";
 import RequiredStar from "../Components/RequiredStar";
 
-const Signup = () => {
+const Signup = ({ setIsOtpSent, setOtpFrom }) => {
   const [errorMsg, setErrorMsg] = useState("");
   const [formData, setFormData] = useState({
     firstname: "",

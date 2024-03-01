@@ -9,12 +9,15 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Components/Navbar";
 import "./animation.css";
+import Page404 from "./Pages/Page404";
 
 const App = () => {
   const toastConfig = {
     autoClose: 3000, // 1 second in milliseconds
   };
 
+  const [isOtpSent, setIsOtpSent] = useState(false);
+  const [otpFrom, setOtpFrom] = useState("");
   const userSelectedTheme = localStorage.getItem("isDarkTheme");
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const handleTheme = () => {
@@ -33,13 +36,24 @@ const App = () => {
         isDarkTheme ? "dark" : "light"
       }`}
     >
-      <Navbar isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
       <BrowserRouter>
+        <Navbar isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/otp" element={<OtpPage />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/login"
+            element={
+              <Login setIsOtpSent={setIsOtpSent} setOtpFrom={setOtpFrom} />
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <Signup setIsOtpSent={setIsOtpSent} setOtpFrom={setOtpFrom} />
+            }
+          />
+          {isOtpSent ? <Route path="/otp" element={<OtpPage />} /> : ""}
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </BrowserRouter>
 

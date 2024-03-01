@@ -45,7 +45,7 @@ const OtpPage = () => {
   };
 
   return (
-    <main className="w-full min-h-screen flex justify-center items-center bg-[url(/images/png/bg-common.png)] bg-center  bg-fixed bg-cover bg-no-repeat">
+    <main className="w-full min-h-screen flex justify-center ">
       <div className="relative w-fit h-fit">
         <BlueCircle />
         <PurpleCircle />

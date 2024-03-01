@@ -3,7 +3,7 @@ import BlueCircle from "../Components/BlueCircle";
 import PurpleCircle from "../Components/PurpleCircle";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ setIsOtpSent, setOtpFrom }) => {
   const [errorMsg, setErrorMsg] = useState("");
   const [formData, setFormData] = useState({
     email: "",
@@ -35,7 +35,7 @@ const Login = () => {
   };
 
   return (
-    <main className="w-full min-h-screen flex justify-center bg-[url(/images/png/bg-common.png)] bg-center  bg-fixed bg-cover bg-no-repeat">
+    <main className="w-full min-h-screen flex justify-center">
       <div className="relative w-fit h-fit">
         <BlueCircle />
         <PurpleCircle />
