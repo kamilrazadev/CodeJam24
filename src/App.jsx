@@ -7,11 +7,14 @@ import ThemeToggler from "./Components/ThemeToggler";
 import OtpPage from "./Pages/OtpPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "./Components/Navbar";
+import "./animation.css";
 
 const App = () => {
   const toastConfig = {
     autoClose: 3000, // 1 second in milliseconds
   };
+
   const userSelectedTheme = localStorage.getItem("isDarkTheme");
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const handleTheme = () => {
@@ -30,12 +33,7 @@ const App = () => {
         isDarkTheme ? "dark" : "light"
       }`}
     >
-      <div className="py-4 fixed z-50 top-0 right-5">
-        <ThemeToggler
-          isDarkTheme={isDarkTheme}
-          setIsDarkTheme={setIsDarkTheme}
-        />
-      </div>
+      <Navbar isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

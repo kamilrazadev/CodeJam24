@@ -35,19 +35,19 @@ const Login = () => {
   };
 
   return (
-    <main className="w-full min-h-screen flex justify-center items-center bg-[url(/images/png/bg-common.png)] bg-center  bg-fixed bg-cover bg-no-repeat">
+    <main className="w-full min-h-screen flex justify-center bg-[url(/images/png/bg-common.png)] bg-center  bg-fixed bg-cover bg-no-repeat">
       <div className="relative w-fit h-fit">
         <BlueCircle />
         <PurpleCircle />
         <form
           onSubmit={handleSubmit}
-          className="relative glassy rounded-[16px] p-10 w-fit h-[470px] flex flex-col justify-between"
+          className="zoom-in relative glassy rounded-[16px] p-10 w-fit h-[470px] flex flex-col justify-between mx-5 mt-5"
         >
           <h1 className="theme-text text-center text-[30px] font-bold">
             Login to Account
           </h1>
-          <div className=" md:h-[12rem] flex flex-col justify-evenly">
-            <div className="flex flex-col gap-[5px] rounded-[16px] relative z-20">
+          <div className="flex flex-col gap-3 py-5">
+            <div className="flex flex-col gap-[5px]">
               <label className="theme-text" htmlFor="email">
                 {" "}
                 Email :
@@ -60,6 +60,7 @@ const Login = () => {
                 className="input theme-text"
                 onChange={handleInputChange}
                 autoComplete="true"
+                autoFocus={true}
               />
             </div>
             <div className="flex flex-col gap-[5px] rounded-[16px] relative z-20">

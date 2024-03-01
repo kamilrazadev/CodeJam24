@@ -17,12 +17,7 @@ const Home = () => {
             We're KUU
           </h1>
         </div>
-        <div className="w-[50%]">
-          <img
-            src="/images/performance_marketing_company_himachal_shimla.gif"
-            alt=""
-          />
-        </div>
+        <div className="w-[50%]"></div>
       </section>
     </main>
   );
