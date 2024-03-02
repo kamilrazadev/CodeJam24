@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Components/Navbar";
 import "./animation.css";
 import Page404 from "./Pages/Page404";
+import { starterQuery } from "./APIManager";
 
 const App = () => {
   const toastConfig = {
@@ -28,6 +29,7 @@ const App = () => {
 
   useEffect(() => {
     handleTheme();
+    starterQuery();
   }, []);
 
   return (
