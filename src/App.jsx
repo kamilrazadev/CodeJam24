@@ -17,7 +17,7 @@ const App = () => {
     autoClose: 3000, // 1 second in milliseconds
   };
 
-  const [isOtpSent, setIsOtpSent] = useState(false);
+  const [isOtpSent, setIsOtpSent] = useState(true);
   const [otpFrom, setOtpFrom] = useState("");
   const userSelectedTheme = localStorage.getItem("isDarkTheme");
   const [isDarkTheme, setIsDarkTheme] = useState(false);

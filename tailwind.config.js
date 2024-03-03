@@ -13,6 +13,9 @@ export default {
       screens: {
         "screen-620": "620px",
       },
+      colors: {
+        primary: "#ff2391",
+      },
     },
   },
   plugins: [],

@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { toast } from "react-toastify";
 import BlueCircle from "../Components/BlueCircle";
 import PurpleCircle from "../Components/PurpleCircle";
+import "../animation.css";
 
 const OtpPage = () => {
   const [otp, setOtp] = useState(["", "", "", ""]);
@@ -51,7 +52,7 @@ const OtpPage = () => {
         <PurpleCircle />
         <form
           onSubmit={handleSubmit}
-          className="relative glassy rounded-[16px] p-10 w-fit h-[400px] flex flex-col justify-between"
+          className="zoom-in relative glassy rounded-[16px] p-10 w-fit h-[400px] flex flex-col justify-between"
         >
           <h1 className="theme-text text-center text-[30px] font-bold">
             OTP Verification
@@ -67,7 +68,7 @@ const OtpPage = () => {
                 maxLength={1}
                 value={digit}
                 inputMode="numeric"
-                className="bg-transparent border-b-sm border-r-sm border-[#ffffff8a] rounded-lg shadow-custom-inset text-[20px] font-bold theme-text w-[50px] h-[50px] outline-none text-center"
+                className="bg-transparent border-b-sm border-r-sm border-[#ffffff8a] rounded-lg shadow-custom-inset text-[20px] font-bold theme-text w-[50px] h-[50px] outline-none focus:border-primary text-center"
                 onChange={(e) => handleChange(index, e.target.value)}
               />
             ))}
