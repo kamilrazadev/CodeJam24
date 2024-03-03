@@ -54,9 +54,15 @@ const OtpPage = () => {
           onSubmit={handleSubmit}
           className="zoom-in relative glassy rounded-[16px] p-10 w-fit h-[400px] flex flex-col justify-between"
         >
-          <h1 className="theme-text text-center text-[30px] font-bold">
-            OTP Verification
-          </h1>
+          <div>
+            <h1 className="theme-text text-center text-[30px] font-bold">
+              OTP Verification
+            </h1>
+
+            <p className="text-secondary text-[14px] text-center">
+              An OTP sent to your email. <br /> don't share it with others
+            </p>
+          </div>
 
           <div className="flex gap-5 rounded-[16px] relative z-20">
             {otp.map((digit, index) => (

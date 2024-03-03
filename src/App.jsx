@@ -20,10 +20,10 @@ const App = () => {
   const [isOtpSent, setIsOtpSent] = useState(true);
   const [otpFrom, setOtpFrom] = useState("");
   const userSelectedTheme = localStorage.getItem("isDarkTheme");
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
   const handleTheme = () => {
-    if (userSelectedTheme == "true") {
-      setIsDarkTheme(true);
+    if (userSelectedTheme == "false") {
+      setIsDarkTheme(false);
     }
   };
 
