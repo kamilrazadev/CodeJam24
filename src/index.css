@@ -49,7 +49,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .dark .theme-text {
-  color: rgb(255, 255, 255) !important;
+  color: rgb(248, 248, 248) !important;
 }
 .light .theme-text {
   color: black !important;
@@ -117,11 +117,15 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .input {
   padding: 0.4rem 0.3rem 0.4rem 0.8rem;
-    border-radius: 10px;
-    background: inherit;
-    border: 2px solid white;
-    font-size: 0.9rem;
-}
-.input:focus {
+  border-radius: 10px;
+  background: inherit;
+  border: 0.5px solid white;
+  font-size: 0.9rem;
   outline: none;
+  font-style: italic;
+  box-shadow: 2px 2px 5px 0px #0000003a;
+}
+
+.dark .input {
+  box-shadow: 2px 2px 5px 0px #0000008a;
 }
