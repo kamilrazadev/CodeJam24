@@ -1,31 +1,31 @@
 /* Theme toggler css */
 .toggle {
-  background-color: transparent;
-  width: 36px;
-  height: 36px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
+  display: grid;
+  place-items: center;
   cursor: pointer;
-  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.1);
   line-height: 1;
 }
 
-.input-switch {
+.input {
   display: none;
 }
 
 .icon {
   grid-column: 1 / 1;
   grid-row: 1 / 1;
-  transition: transform 300ms;
+  transition: transform 500ms;
 }
 
 .icon--moon {
-  color: black;
+  transition-delay: 200ms;
 }
 
 .icon--sun {
-  transform: scale(0);
   color: yellow;
+  transform: scale(0);
 }
 
 #switch:checked + .icon--moon {
@@ -33,6 +33,7 @@
 }
 
 #switch:checked ~ .icon--sun {
+  transition-delay: 200ms;
   transform: scale(1) rotate(360deg);
 }
 
