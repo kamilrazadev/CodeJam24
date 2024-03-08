@@ -4,6 +4,7 @@ import BlueCircle from "../Components/BlueCircle";
 import PurpleCircle from "../Components/PurpleCircle";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import OrangeCircleBg from "../Components/OrangeCircleBg";
+import { toast } from "react-toastify";
 
 const ResumeBuilder = () => {
   const [formData, setFormData] = useState({
@@ -52,6 +53,9 @@ const ResumeBuilder = () => {
   };
 
   const handleAddSkill = () => {
+    if (!skill) {
+      return;
+    }
     const prevSkills = formData.skills;
     prevSkills.push(skill);
     setFormData({
@@ -91,10 +95,19 @@ const ResumeBuilder = () => {
       !formData.workResponsibility ||
       !formData.workDuration
     ) {
+      return toast.error("Please fill all fields");
+    }
+
+    if (formData.skills.length === 0) {
+      return toast.warning("Please provide atleast one skill");
     }
 
     formData.socials = socialLinks;
     console.log(formData);
+
+    localStorage.setItem("resumeData", JSON.stringify(formData));
+
+    return toast.success("asas");
   };
 
   return (
@@ -135,7 +148,6 @@ const ResumeBuilder = () => {
                   Last Name:
                 </label>
                 <input
-                  required
                   value={formData.lastName}
                   type="text"
                   name="lastName"
@@ -261,7 +273,6 @@ const ResumeBuilder = () => {
                   <FaTwitter className="inline-block" /> : &nbsp;
                 </label>
                 <input
-                  required
                   type="text"
                   name="twitter"
                   onChange={handleSocialLinks}
@@ -274,7 +285,6 @@ const ResumeBuilder = () => {
                   <FaLinkedin className="inline-block" /> : &nbsp;
                 </label>
                 <input
-                  required
                   type="text"
                   name="linkedin"
                   onChange={handleSocialLinks}
@@ -287,7 +297,6 @@ const ResumeBuilder = () => {
                   <FaGithub className="inline-block" /> : &nbsp;
                 </label>
                 <input
-                  required
                   type="text"
                   name="github"
                   onChange={handleSocialLinks}
@@ -357,7 +366,7 @@ const ResumeBuilder = () => {
 
               <div className="flex flex-col gap-1">
                 <label htmlFor="firstName" className="theme-text">
-                  Institute:
+                  Institute: <RequiredStar />
                 </label>
                 <input
                   required
@@ -405,7 +414,7 @@ const ResumeBuilder = () => {
 
               <div className="flex flex-col gap-1">
                 <label htmlFor="firstName" className="theme-text">
-                  Role:
+                  Role: <RequiredStar />
                 </label>
                 <input
                   required

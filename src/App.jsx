@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Components/Navbar";
 import ResumeBuilder from "./Pages/ResumeBuilder";
+import ShippingLabel from "./Pages/ShippingLabel";
 
 const App = () => {
   const toastConfig = {
     autoClose: 3000, // 1 second in milliseconds
   };
 
-  const [isOtpSent, setIsOtpSent] = useState(true);
-  const [otpFrom, setOtpFrom] = useState("");
+  // const [resumeData, setResumeData] = useState(false);
   const userSelectedTheme = localStorage.getItem("isDarkTheme");
   const [isDarkTheme, setIsDarkTheme] = useState(true);
   const handleTheme = () => {
@@ -21,9 +21,18 @@ const App = () => {
     }
   };
 
+  // const haveData = () => {
+  //   const resumeDataLocal = localStorage.getItem("resumeData");
+  //   console.log(resumeDataLocal);
+  //   if (resumeDataLocal) {
+  //     console.log("done");
+  //     setResumeData(true);
+  //   }
+  // };
+
   useEffect(() => {
     handleTheme();
-    // starterQuery();
+    // haveData();
   }, []);
 
   return (
@@ -37,6 +46,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<ResumeBuilder />} />
+          <Route path="/resume-themes" element={<ShippingLabel />} />
         </Routes>
       </BrowserRouter>
 
