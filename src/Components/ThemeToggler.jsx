@@ -15,7 +15,7 @@ const ThemeToggler = ({ isDarkTheme, setIsDarkTheme }) => {
       <label className="toggle" htmlFor="switch">
         <input
           id="switch"
-          className="input"
+          className="input-theme"
           type="checkbox"
           checked={isDarkTheme}
           onChange={handleThemeChange}
