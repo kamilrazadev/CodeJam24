@@ -7,6 +7,7 @@ import ThemeToggler from "./Components/ThemeToggler";
 import OtpPage from "./Pages/OtpPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import About from "./Pages/About";
 
 const App = () => {
   const toastConfig = {
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/otp" element={<OtpPage />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
 
