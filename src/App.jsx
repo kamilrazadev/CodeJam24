@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
-import Signup from "./Pages/Signup";
-import Login from "./Pages/Login";
-import ThemeToggler from "./Components/ThemeToggler";
-import OtpPage from "./Pages/OtpPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Components/Navbar";
-import "./animation.css";
-import Page404 from "./Pages/Page404";
-// import { starterQuery } from "./APIManager";
+import ResumeBuilder from "./Pages/ResumeBuilder";
 
 const App = () => {
   const toastConfig = {
@@ -42,20 +36,7 @@ const App = () => {
         <Navbar isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route
-            path="/login"
-            element={
-              <Login setIsOtpSent={setIsOtpSent} setOtpFrom={setOtpFrom} />
-            }
-          />
-          <Route
-            path="/signup"
-            element={
-              <Signup setIsOtpSent={setIsOtpSent} setOtpFrom={setOtpFrom} />
-            }
-          />
-          {isOtpSent ? <Route path="/otp" element={<OtpPage />} /> : ""}
-          <Route path="*" element={<Page404 />} />
+          <Route path="/create" element={<ResumeBuilder />} />
         </Routes>
       </BrowserRouter>
 
